@@ -1,27 +1,25 @@
 {
-  "npmScope": "test-nx",
-  "affected": {
-    "defaultBase": "master"
-  },
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
+  "affected": { "defaultBase": "master" },
+  "npmScope": "test-nx",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "NmY4YmVjMjctMTEzMS00MGY1LWIyMDQtNTcyZjYyZWQ0YThifHJlYWQtd3JpdGU=",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "next": { "tags": [] },
+    "next-e2e": { "tags": [], "implicitDependencies": ["next"] },
+    "test": { "tags": [] },
+    "test-e2e": { "tags": [], "implicitDependencies": ["test"] }
+  }
 }
